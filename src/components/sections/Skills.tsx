@@ -38,7 +38,7 @@ const techStack = [
   { name: "Python", icon: SiPython, color: "#3b82f6" },
   { name: "TypeScript", icon: SiTypescript, color: "#3178c6" },
   { name: "React", icon: SiReact, color: "#61dafb" },
-  { name: "Next.js", icon: SiNextdotjs, color: "var(--text-primary)" },
+  { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
   { name: "Three.js", icon: SiThreedotjs, color: "#10b981" },
   { name: "PyTorch", icon: SiPytorch, color: "#ee4c2c" },
   { name: "LangChain", icon: SiLangchain, color: "#f59e0b" },
@@ -47,7 +47,7 @@ const techStack = [
   { name: "Docker", icon: SiDocker, color: "#2496ed" },
   { name: "AWS", icon: FaAws, color: "#ff9900" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#4169e1" },
-  { name: "Kafka", icon: SiApachekafka, color: "var(--text-primary)" },
+  { name: "Kafka", icon: SiApachekafka, color: "#e2e8f0" },
   { name: "Tailwind", icon: SiTailwindcss, color: "#06b6d4" },
   { name: "Framer", icon: SiFramer, color: "#0055ff" },
   { name: "OpenCV", icon: SiOpencv, color: "#5c3ee8" },
@@ -165,47 +165,54 @@ export default function Skills() {
             Tech Stack 🚀
           </h3>
           <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-3">
-            {techStack.map((tech, i) => (
-              <motion.div
-                key={tech.name}
-                className="flex flex-col items-center gap-2 p-2 cursor-default group"
-                initial={{ opacity: 0, scale: 0.7 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.04, duration: 0.35, ease: [0.175, 0.885, 0.32, 1.275] }}
-                whileHover={{
-                  scale: 1.15,
-                  y: -4,
-                }}
-              >
-                {/* Borderless Fluid 3D Glass Icon */}
-                <div
-                  className="w-16 h-16 rounded-3xl flex items-center justify-center select-none transition-all duration-300 relative"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%)",
-                    backdropFilter: "blur(16px)",
-                    WebkitBackdropFilter: "blur(16px)",
-                    boxShadow: `
-                      inset 0 3px 5px rgba(255, 255, 255, 0.28),
-                      inset 0 -3px 5px rgba(0, 0, 0, 0.25),
-                      0 8px 16px rgba(0, 0, 0, 0.15),
-                      0 4px 12px ${tech.color}25
-                    `.trim(),
+            {techStack.map((tech, i) => {
+              const isIllustration = activeUniverse === "universe-illustration";
+              const computedColor = isIllustration && (tech.color === "#ffffff" || tech.color === "#e2e8f0")
+                ? "#0f172a"
+                : tech.color;
+
+              return (
+                <motion.div
+                  key={tech.name}
+                  className="flex flex-col items-center gap-2 p-2 cursor-default group"
+                  initial={{ opacity: 0, scale: 0.7 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.04, duration: 0.35, ease: [0.175, 0.885, 0.32, 1.275] }}
+                  whileHover={{
+                    scale: 1.15,
+                    y: -4,
                   }}
                 >
-                  {/* Internal fluid color lens glow */}
+                  {/* Borderless Fluid 3D Glass Icon */}
                   <div
-                    className="absolute inset-2.5 rounded-full filter blur-md opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity duration-300"
-                    style={{ background: tech.color }}
-                  />
-                  <tech.icon size={30} style={{ color: tech.color, zIndex: 1 }} />
-                </div>
-                <span className="text-[11px] font-bold text-center leading-tight mt-1"
-                  style={{ color: "var(--text-primary)" }}>
-                  {tech.name}
-                </span>
-              </motion.div>
-            ))}
+                    className="w-16 h-16 rounded-3xl flex items-center justify-center select-none transition-all duration-300 relative"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%)",
+                      backdropFilter: "blur(16px)",
+                      WebkitBackdropFilter: "blur(16px)",
+                      boxShadow: `
+                        inset 0 3px 5px rgba(255, 255, 255, 0.28),
+                        inset 0 -3px 5px rgba(0, 0, 0, 0.25),
+                        0 8px 16px rgba(0, 0, 0, 0.15),
+                        0 4px 12px ${computedColor}25
+                      `.trim(),
+                    }}
+                  >
+                    {/* Internal fluid color lens glow */}
+                    <div
+                      className="absolute inset-2.5 rounded-full filter blur-md opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity duration-300"
+                      style={{ background: computedColor }}
+                    />
+                    <tech.icon size={30} style={{ color: computedColor, zIndex: 1 }} />
+                  </div>
+                  <span className="text-[11px] font-bold text-center leading-tight mt-1"
+                    style={{ color: "var(--text-primary)" }}>
+                    {tech.name}
+                  </span>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
 
