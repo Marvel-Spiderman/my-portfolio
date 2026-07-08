@@ -1,6 +1,10 @@
-# 🌌 Interactive Developer Experience — Portfolio
+<p align="center">
+  <img src="public/assets/logo.svg" alt="Portfolio Logo" width="100" />
+</p>
 
-An immersive, game-inspired developer portfolio designed to showcase projects, skills, and metrics with high-performance animations, dynamic themes, and a real-time audio synthesizer.
+<h1 align="center">🌌 Interactive Developer Experience — Portfolio</h1>
+
+<p align="center">An immersive, game-inspired developer portfolio designed to showcase projects, skills, and metrics with high-performance animations, dynamic themes, and a real-time audio synthesizer.</p>
 
 ---
 
@@ -74,3 +78,7 @@ To create an optimized production bundle:
 npm run build
 ```
 This generates a static, server-optimized build output inside the `.next` directory.
+
+---
+
+<p align="center">Made with ❤️ by <a href="https://github.com/Marvel-Spiderman">Rounit Raj</a></p>
