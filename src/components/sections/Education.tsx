@@ -6,8 +6,8 @@ import { usePortfolioStore } from "../../store/portfolioStore";
 
 const educationTimeline = [
   {
-    year: "2022 – 2026",
-    title: "B.E in Computer Science & Engineering",
+    year: "2020 – 2024",
+    title: "Bachelor of Engineering (CSE)",
     subtitle: "Chandigarh University",
     description: (
       <>
@@ -27,7 +27,7 @@ const educationTimeline = [
       </>
     ),
     tags: ["Data Structures", "Machine Learning", "Cloud Computing"],
-    color: "#8b5cf6",
+    color: "#0ea5e9",
   },
   {
     year: "2019 - 2021",
@@ -39,7 +39,7 @@ const educationTimeline = [
       </>
     ),
     tags: ["Data Structures", "Machine Learning", "Cloud Computing"],
-    color: "#8b5cf6",
+    color: "#ec4899",
   },
   {
     year: "2023",
