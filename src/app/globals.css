@@ -1,0 +1,722 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ── 6 Main Universes Custom Variables ────────────────────────────── */
+
+/* 1. Liquid Glass (Apple Inspired - Default) */
+:root, .universe-liquid-glass {
+  --bg-darker: #060914;
+  --bg-dark: #0d1222;
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --bg-card-hover: rgba(255, 255, 255, 0.15);
+  --accent: #ffffff;
+  --accent-secondary: #3b82f6;
+  --accent-glow: #38bdf8;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-body: #cbd5e1;
+  --border-primary: rgba(255, 255, 255, 0.16);
+  --shadow-glow: rgba(56, 189, 248, 0.25);
+  --font-family: var(--font-sora), "Sora", sans-serif;
+  --font-mono-family: "JetBrains Mono", monospace;
+  --glass-blur: 24px;
+  --theme-gradient: linear-gradient(135deg, #ffffff 0%, #3b82f6 50%, #38bdf8 100%);
+  --btn-bg: rgba(255, 255, 255, 0.05);
+  --btn-border: rgba(255, 255, 255, 0.12);
+  --btn-text: #94a3b8;
+  --btn-hover-bg: rgba(255, 255, 255, 0.10);
+  --btn-primary-text: #090d16;
+  --ill-fill: rgba(255, 255, 255, 0.08);
+  --ill-bg: rgba(13, 18, 34, 0.5);
+  --ill-stroke: rgba(255, 255, 255, 0.35);
+}
+
+.universe-liquid-glass {
+  background:
+    radial-gradient(ellipse 140% 90% at 0% 0%,   rgba(96, 165, 250, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 100% 80% at 100% 0%,  rgba(139, 92, 246, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 70%  60% at 40% 100%, rgba(6, 182, 212, 0.15)  0%, transparent 55%),
+    radial-gradient(ellipse 50%  40% at 80% 70%,  rgba(59, 130, 246, 0.1)  0%, transparent 50%),
+    radial-gradient(ellipse 30%  25% at 20% 50%,  rgba(147, 197, 253, 0.08) 0%, transparent 50%),
+    linear-gradient(160deg, #030811 0%, #060d1e 60%, #040a17 100%);
+  background-attachment: fixed;
+}
+
+/* 2. Cyberpunk (Night City) */
+.universe-cyberpunk {
+  --bg-darker: #05010a;
+  --bg-dark: #0a0414;
+  --bg-card: rgba(217, 70, 239, 0.04);
+  --bg-card-hover: rgba(6, 182, 212, 0.08);
+  --accent: #d946ef;
+  --accent-secondary: #06b6d4;
+  --accent-glow: #f43f5e;
+  --text-primary: #fdf6ff;
+  --text-muted: #c084fc;
+  --text-body: #ddd6fe;
+  --border-primary: rgba(217, 70, 239, 0.18);
+  --shadow-glow: rgba(217, 70, 239, 0.35);
+  --font-family: "Sora", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --glass-blur: 8px;
+  --theme-gradient: linear-gradient(135deg, #d946ef 0%, #06b6d4 100%);
+  --btn-bg: rgba(217, 70, 239, 0.05);
+  --btn-border: rgba(217, 70, 239, 0.18);
+  --btn-text: #c084fc;
+  --btn-hover-bg: rgba(217, 70, 239, 0.12);
+  --btn-primary-text: #ffffff;
+  --ill-fill: rgba(217, 70, 239, 0.08);
+  --ill-bg: rgba(5, 1, 10, 0.6);
+  --ill-stroke: rgba(217, 70, 239, 0.4);
+
+  background:
+    radial-gradient(ellipse 120% 70% at 5%  5%,   rgba(217, 70, 239,  0.35) 0%, transparent 55%),
+    radial-gradient(ellipse 90%  60% at 95% 8%,   rgba(6,  182, 212, 0.28) 0%, transparent 50%),
+    radial-gradient(ellipse 70%  50% at 50% 100%, rgba(244, 63, 94,  0.22) 0%, transparent 55%),
+    radial-gradient(ellipse 50%  40% at 80% 50%,  rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 40%  30% at 20% 70%,  rgba(217, 70, 239, 0.12) 0%, transparent 45%),
+    linear-gradient(180deg, #02000b 0%, #060212 50%, #090318 100%);
+  background-attachment: fixed;
+}
+
+/* 3. Gaming HUD (AAA Tactical Esports) */
+.universe-gaming {
+  --bg-darker: #030000;
+  --bg-dark: #0d0202;
+  --bg-card: rgba(239, 68, 68, 0.10);
+  --bg-card-hover: rgba(249, 115, 22, 0.16);
+  --accent: #ef4444;
+  --accent-secondary: #f97316;
+  --accent-glow: #fca5a5;
+  --text-primary: #fff1f1;
+  --text-muted: #fde8e8;
+  --text-body: #fcd5d5;
+  --border-primary: rgba(239, 68, 68, 0.25);
+  --shadow-glow: rgba(239, 68, 68, 0.45);
+  --font-family: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --glass-blur: 4px;
+  --theme-gradient: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+  --btn-bg: rgba(239, 68, 68, 0.06);
+  --btn-border: rgba(239, 68, 68, 0.25);
+  --btn-text: #fca5a5;
+  --btn-hover-bg: rgba(239, 68, 68, 0.14);
+  --btn-primary-text: #ffffff;
+  --ill-fill: rgba(239, 68, 68, 0.08);
+  --ill-bg: rgba(3, 0, 0, 0.6);
+  --ill-stroke: rgba(239, 68, 68, 0.4);
+
+  background:
+    radial-gradient(ellipse 110% 65% at 50% 0%,   rgba(239, 68, 68,  0.30) 0%, transparent 60%),
+    radial-gradient(ellipse 80%  55% at 5%  85%,  rgba(249, 115, 22, 0.20) 0%, transparent 55%),
+    radial-gradient(ellipse 70%  45% at 95% 80%,  rgba(239, 68, 68,  0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 50%  35% at 50% 55%,  rgba(234, 179, 8,  0.08) 0%, transparent 45%),
+    radial-gradient(ellipse 30%  25% at 80% 20%,  rgba(249, 115, 22, 0.10) 0%, transparent 40%),
+    linear-gradient(180deg, #020000 0%, #0a0101 50%, #050000 100%);
+  background-attachment: fixed;
+}
+
+/* 4. Illustration (Warm / Friendly) */
+.universe-illustration {
+  --bg-darker: #f0f4f8;
+  --bg-dark: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-card-hover: rgba(255, 255, 255, 0.90);
+  --accent: #f43f5e;
+  --accent-secondary: #f59e0b;
+  --accent-glow: #fb7185;
+  --text-primary: #0f172a;
+  --text-muted: #475569;
+  --text-body: #1e293b;
+  --border-primary: rgba(15, 23, 42, 0.12);
+  --shadow-glow: rgba(244, 63, 94, 0.2);
+  --font-family: "Sora", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --glass-blur: 0px;
+  --theme-gradient: linear-gradient(135deg, #f43f5e 0%, #f59e0b 100%);
+  --btn-bg: rgba(15, 23, 42, 0.05);
+  --btn-border: rgba(15, 23, 42, 0.14);
+  --btn-text: #1e293b;
+  --btn-hover-bg: rgba(15, 23, 42, 0.1);
+  --btn-primary-text: #ffffff;
+  --ill-fill: rgba(244, 63, 94, 0.05);
+  --ill-bg: #ffffff;
+  --ill-stroke: #0f172a;
+
+  background:
+    radial-gradient(ellipse 100% 60% at 0%   0%,   rgba(251, 113, 133, 0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 80%  55% at 100% 0%,   rgba(251, 191, 36,  0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 70%  50% at 50%  100%, rgba(56,  189, 248, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50%  40% at 80%  55%,  rgba(167, 139, 250, 0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 40%  35% at 15%  65%,  rgba(52,  211, 153, 0.08) 0%, transparent 45%),
+    linear-gradient(155deg, #fef9f0 0%, #fdf4f8 50%, #f7f3ff 100%);
+  background-attachment: fixed;
+}
+
+/* 5. Blueprint (Technical / CAD Wireframe) */
+.universe-blueprint {
+  --bg-darker: #040b1a;
+  --bg-dark: #071028;
+  --bg-card: rgba(6, 182, 212, 0.10);
+  --bg-card-hover: rgba(6, 182, 212, 0.18);
+  --accent: #22d3ee;
+  --accent-secondary: #0ea5e9;
+  --accent-glow: #67e8f9;
+  --text-primary: #e0f7fa;
+  --text-muted: #bae6fd;
+  --text-body: #a5f3fc;
+  --border-primary: rgba(34, 211, 238, 0.18);
+  --shadow-glow: rgba(34, 211, 238, 0.35);
+  --font-family: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --glass-blur: 3px;
+  --theme-gradient: linear-gradient(135deg, #22d3ee 0%, #0ea5e9 100%);
+  --btn-bg: rgba(6, 182, 212, 0.05);
+  --btn-border: rgba(34, 211, 238, 0.2);
+  --btn-text: #67e8f9;
+  --btn-hover-bg: rgba(6, 182, 212, 0.12);
+  --btn-primary-text: #040b1a;
+  --ill-fill: rgba(34, 211, 238, 0.06);
+  --ill-bg: rgba(4, 11, 26, 0.6);
+  --ill-stroke: rgba(34, 211, 238, 0.45);
+
+  background:
+    radial-gradient(ellipse 110% 70% at 50% 0%,   rgba(6,   182, 212, 0.22) 0%, transparent 58%),
+    radial-gradient(ellipse 80%  55% at 5%   80%,  rgba(14,  165, 233, 0.16) 0%, transparent 52%),
+    radial-gradient(ellipse 70%  50% at 95%  75%,  rgba(34,  211, 238, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 50%  40% at 50%  50%,  rgba(6,   182, 212, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 35%  25% at 75%  25%,  rgba(103, 232, 249, 0.10) 0%, transparent 45%),
+    linear-gradient(180deg, #030a19 0%, #050e22 50%, #040c1e 100%);
+  background-attachment: fixed;
+}
+
+/* 6. Cosmos (Stellar Drift) */
+.universe-cosmos {
+  --bg-darker: #010108;
+  --bg-dark: #04040f;
+  --bg-card: rgba(99, 102, 241, 0.12);
+  --bg-card-hover: rgba(167, 139, 250, 0.20);
+  --accent: #a78bfa;
+  --accent-secondary: #7c3aed;
+  --accent-glow: #c084fc;
+  --text-primary: #f5f3ff;
+  --text-muted: #e9d5ff;
+  --text-body: #ddd6fe;
+  --border-primary: rgba(167, 139, 250, 0.18);
+  --shadow-glow: rgba(124, 58, 237, 0.4);
+  --font-family: "Sora", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --glass-blur: 16px;
+  --theme-gradient: linear-gradient(135deg, #7c3aed 0%, #a78bfa 50%, #c084fc 100%);
+  --btn-bg: rgba(167, 139, 250, 0.07);
+  --btn-border: rgba(167, 139, 250, 0.2);
+  --btn-text: #c4b5fd;
+  --btn-hover-bg: rgba(167, 139, 250, 0.14);
+  --btn-primary-text: #1e1b4b;
+  --ill-fill: rgba(167, 139, 250, 0.08);
+  --ill-bg: rgba(1, 1, 8, 0.6);
+  --ill-stroke: rgba(167, 139, 250, 0.35);
+
+  background:
+    radial-gradient(ellipse 100% 70% at 20% 10%,  rgba(124, 58, 237,  0.40) 0%, transparent 58%),
+    radial-gradient(ellipse 80%  60% at 85% 8%,   rgba(167, 139, 250, 0.30) 0%, transparent 52%),
+    radial-gradient(ellipse 100% 50% at 50% 100%, rgba(99,  102, 241, 0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 50%  40% at 10% 60%,  rgba(192, 132, 252, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 35%  30% at 65% 45%,  rgba(139, 92,  246, 0.14) 0%, transparent 45%),
+    radial-gradient(ellipse 25%  20% at 90% 50%,  rgba(244, 114, 182, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, #000008 0%, #030012 50%, #01000a 100%);
+  background-attachment: fixed;
+}
+
+/* 7. Retro Arcade (Space Shooter Arcade Cabin) */
+.universe-retro-arcade {
+  --bg-darker: #010103;
+  --bg-dark: #050512;
+  --bg-card: rgba(59, 130, 246, 0.08);
+  --bg-card-hover: rgba(244, 63, 94, 0.12);
+  --accent: #3b82f6; /* Neon Blue */
+  --accent-secondary: #f43f5e; /* Hot Pink */
+  --accent-glow: #60a5fa;
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-body: #cbd5e1;
+  --border-primary: rgba(59, 130, 246, 0.2);
+  --shadow-glow: rgba(59, 130, 246, 0.35);
+  --font-family: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+  --glass-blur: 8px;
+  --theme-gradient: linear-gradient(135deg, #3b82f6 0%, #f43f5e 100%);
+  --btn-bg: rgba(59, 130, 246, 0.06);
+  --btn-border: rgba(59, 130, 246, 0.2);
+  --btn-text: #93c5fd;
+  --btn-hover-bg: rgba(59, 130, 246, 0.12);
+  --btn-primary-text: #ffffff;
+  --ill-fill: rgba(59, 130, 246, 0.05);
+  --ill-bg: rgba(5, 5, 18, 0.7);
+  --ill-stroke: rgba(59, 130, 246, 0.3);
+
+  background:
+    radial-gradient(ellipse 110% 65% at 50% 0%,   rgba(59, 130, 246, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 80%  55% at 5%  85%,  rgba(244, 63, 94, 0.15) 0%, transparent 55%),
+    linear-gradient(180deg, #020205 0%, #050512 50%, #010103 100%);
+  background-attachment: fixed;
+}
+
+/* ── Base resets ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-family, "Sora", sans-serif);
+  transition: background-color 0.6s ease, color 0.4s ease;
+  scroll-behavior: smooth;
+}
+
+/* Ensure all long body copy, paragraphs, and list text utilize the clean, highly legible Sora sans-serif font */
+p, .text-panel, .text-panel p, button.capitalize, .font-sans-clean, .font-sans-clean * {
+  font-family: var(--font-sora), "Sora", sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+
+/* ── Text Readability Utilities ──────────────────────────────────── */
+
+/* Drop shadow for text on dark/complex backgrounds */
+.text-readable {
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.55),
+    0 2px 12px rgba(0, 0, 0, 0.35);
+}
+/* On light illustration theme, use a subtle dark shadow instead */
+.universe-illustration .text-readable {
+  text-shadow:
+    0 1px 3px rgba(255, 255, 255, 0.8),
+    0 0 8px rgba(255, 255, 255, 0.5);
+}
+/* Prevent text-shadow from breaking background-clip: text on gradient spans */
+.text-readable span {
+  text-shadow: none !important;
+}
+
+/* Frosted glass backing panel for body text blocks */
+.text-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid var(--border-primary);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+/* Illustration theme: white frosted panel */
+.universe-illustration .text-panel {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+  border-color: rgba(15, 23, 42, 0.10);
+}
+
+/* Highlighted body text — accent coloured key phrases */
+.text-highlight {
+  color: var(--accent-glow);
+  font-weight: 700;
+}
+.universe-illustration .text-highlight {
+  color: var(--accent);
+}
+
+body {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-darker); }
+::-webkit-scrollbar-thumb { background: var(--border-primary); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── Custom Theme Overlays ────────────────────────────────────────── */
+
+/* Cyberpunk Scanline + Rain effect */
+.cyberpunk-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+.universe-cyberpunk .cyberpunk-rain {
+  display: block;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(217, 70, 239, 0.025) 2px,
+      rgba(217, 70, 239, 0.025) 4px
+    );
+  animation: scanline-move 6s linear infinite;
+}
+.universe-cyberpunk .cyberpunk-rain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(6, 182, 212, 0.03) 50%,
+    transparent 100%
+  );
+  animation: scanline-sweep 4s linear infinite;
+}
+
+/* Blueprint Grid Overlay */
+.blueprint-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+.universe-blueprint .blueprint-grid {
+  display: block;
+  background-image:
+    linear-gradient(rgba(6, 182, 212, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 20px 20px, 20px 20px;
+  opacity: 1;
+}
+
+/* Cosmos Twinkling Starfield */
+.cosmos-stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+.universe-cosmos .cosmos-stars {
+  display: block;
+  background-image:
+    radial-gradient(1.5px 1.5px at 15px 25px, #ffffff, transparent),
+    radial-gradient(2px 2px at 38px 68px, rgba(255,255,255,0.8), transparent),
+    radial-gradient(1px 1px at 52px 152px, #ffffff, transparent),
+    radial-gradient(2px 2px at 88px 38px, rgba(192,132,252,0.6), transparent),
+    radial-gradient(1px 1px at 128px 78px, #ffffff, transparent),
+    radial-gradient(2.5px 2.5px at 158px 118px, rgba(124,58,237,0.7), transparent),
+    radial-gradient(1.5px 1.5px at 72px 172px, rgba(255,255,255,0.7), transparent),
+    radial-gradient(1px 1px at 48px 98px, rgba(196,181,253,0.8), transparent);
+  background-size: 200px 200px;
+  animation: stars-drift 180s linear infinite;
+}
+
+/* Gaming HUD Overlay */
+.gaming-hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+.universe-gaming .gaming-hud {
+  display: block;
+  border: 1px solid rgba(239, 68, 68, 0.08);
+}
+.universe-gaming .gaming-hud::before {
+  content: "";
+  position: absolute;
+  top: 12px; left: 12px; right: 12px; bottom: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.04);
+}
+.universe-gaming .gaming-hud::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(239, 68, 68, 0.012) 3px,
+      rgba(239, 68, 68, 0.012) 4px
+    );
+}
+
+/* ── Glassmorphism Layout Components ──────────────────────────────── */
+.glass-panel {
+  background-color: var(--bg-card);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid var(--border-primary);
+  border-radius: 16px;
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.20),
+    0 2px 8px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 25px var(--shadow-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background-color: var(--bg-card-hover);
+}
+
+/* Liquid glass shimmer effect on hover */
+.liquid-glass-border {
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: skewX(-25deg);
+  transition: 0.8s ease;
+  pointer-events: none;
+}
+.liquid-glass-border:hover::before {
+  left: 200%;
+}
+
+/* Glow text utility */
+.text-glow {
+  text-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--shadow-glow);
+}
+
+/* ── Animation Keyframes ─────────────────────────────────────────── */
+@keyframes scanline-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100vh; }
+}
+
+@keyframes scanline-sweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes stars-drift {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-100px) translateX(-50px); }
+  100% { transform: translateY(-200px) translateX(0); }
+}
+
+@keyframes float-up {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float-up 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.3; filter: blur(0px); }
+  50% { opacity: 1; filter: blur(1px); }
+}
+.animate-glow-pulse {
+  animation: glow-pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes flow-dash {
+  to { stroke-dashoffset: -40; }
+}
+.animate-flow {
+  stroke-dasharray: 8 4;
+  animation: flow-dash 1.2s linear infinite;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* ── Theme Transition Overlay ────────────────────────────────────── */
+/* Smooth cross-fade when switching universe */
+.universe-cosmos,
+.universe-cyberpunk,
+.universe-gaming,
+.universe-illustration,
+.universe-blueprint,
+.universe-liquid-glass,
+.universe-retro-arcade {
+  transition:
+    background-color 0.6s ease,
+    color 0.4s ease;
+}
+
+/* ── Neon Glow Helpers ───────────────────────────────────────────── */
+.neon-border {
+  box-shadow:
+    0 0 5px var(--accent),
+    0 0 20px var(--shadow-glow),
+    inset 0 0 5px var(--shadow-glow);
+}
+
+/* ── Illustration theme: force visible 3D canvas ─────────────────── */
+.universe-illustration canvas {
+  opacity: 0.4;
+}
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ── Custom Logo Glow Animation ── */
+@keyframes logoGlow {
+  0%, 100% {
+    stroke: var(--accent);
+    color: var(--accent);
+    filter: drop-shadow(0 0 2px var(--accent-glow));
+  }
+  50% {
+    stroke: var(--accent-secondary);
+    color: var(--accent-secondary);
+    filter: drop-shadow(0 0 8px var(--accent-secondary));
+  }
+}
+.logo-glow-anim {
+  animation: logoGlow 6s infinite ease-in-out;
+}

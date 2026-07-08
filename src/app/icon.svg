@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <!-- Fluid Glass Whitish Gradient -->
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#93c5fd" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded Terminal Container with frosted glass surface fill -->
+  <rect width="20" height="20" x="2" y="2" rx="5" stroke-width="2" fill="rgba(255, 255, 255, 0.06)" />
+  <!-- Prompt '>' -->
+  <polyline points="7 14 11 10 7 6" stroke-width="2" />
+  <!-- Cursor '_' -->
+  <line x1="13" y1="14" x2="17" y2="14" stroke-width="2" />
+</svg>
