@@ -6,7 +6,7 @@ import { usePortfolioStore } from "../../store/portfolioStore";
 
 const educationTimeline = [
   {
-    year: "2020 – 2024",
+    year: "2022 – 2026",
     title: "Bachelor of Engineering (CSE)",
     subtitle: "Chandigarh University",
     description: (
