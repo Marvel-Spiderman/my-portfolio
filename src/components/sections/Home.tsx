@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, ShieldAlert } from "lucide-react";
 import { FaGithub as Github, FaLinkedin as Linkedin } from "react-icons/fa6";
@@ -39,6 +39,55 @@ const HeroShape = ({ color, size, x, y, delay, shape }: {
       {el[shape]}
     </motion.div>
   );
+};
+
+// Count-up digits animation for developer stats
+const Counter = ({ value }: { value: string }) => {
+  const numericString = value.replace(/\D/g, ""); // Extract digits e.g. "15"
+  const suffix = value.replace(/\d/g, ""); // Extract non-digits e.g. "+"
+  const target = parseInt(numericString, 10) || 0;
+  
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = target;
+    if (start === end) return;
+
+    // Delay start until name animations finish (1.2 seconds)
+    const startDelay = 1200;
+    // Slower duration for counting transition (2.2 seconds)
+    const duration = 2200; 
+    let frameId: number;
+
+    const delayTimeout = setTimeout(() => {
+      const startTime = performance.now();
+
+      const updateCount = (currentTime: number) => {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        
+        // Easing function (easeOutQuad)
+        const easeProgress = progress * (2 - progress);
+        
+        const currentVal = Math.floor(easeProgress * (end - start) + start);
+        setCount(currentVal);
+
+        if (progress < 1) {
+          frameId = requestAnimationFrame(updateCount);
+        }
+      };
+
+      frameId = requestAnimationFrame(updateCount);
+    }, startDelay);
+
+    return () => {
+      clearTimeout(delayTimeout);
+      if (frameId) cancelAnimationFrame(frameId);
+    };
+  }, [target]);
+
+  return <>{count}{suffix}</>;
 };
 
 export default function Home() {
@@ -190,7 +239,9 @@ export default function Home() {
           <div className="grid grid-cols-3 gap-4 py-4" style={{ borderTop: "1px solid var(--border-primary)", borderBottom: "1px solid var(--border-primary)" }}>
             {stats.map((s, i) => (
               <div key={i} className="space-y-0.5">
-                <span className="text-2xl font-black text-readable" style={{ color: "var(--accent-glow)" }}>{s.value}</span>
+                <span className="text-2xl font-black text-readable" style={{ color: "var(--accent-glow)" }}>
+                  <Counter value={s.value} />
+                </span>
                 <p className="text-[10px] font-bold uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>{s.label}</p>
               </div>
             ))}
