@@ -105,7 +105,7 @@ export default function Education() {
               </div>
 
               {/* Content Card */}
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1"
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-2xl transition-all duration-300 hover:-translate-y-1 liquid-glass-border"
                 style={{
                   background: "var(--bg-card)",
                   border: "1px solid var(--border-primary)",

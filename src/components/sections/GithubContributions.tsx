@@ -57,11 +57,17 @@ export default function GithubContributions() {
       <div className="container mx-auto px-5 lg:px-28">
         
         <motion.div 
-          className="p-8 lg:p-10 rounded-3xl border backdrop-blur shadow-2xl relative overflow-hidden"
+          className="p-8 lg:p-10 rounded-3xl border backdrop-blur shadow-2xl relative overflow-hidden liquid-glass-border cursor-default"
           style={{ background: "var(--bg-card)", borderColor: "var(--border-primary)" }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
+          whileHover={{
+            y: -3,
+            borderColor: "var(--accent)",
+            boxShadow: "0 10px 30px var(--shadow-glow)",
+          }}
+          transition={{ duration: 0.3 }}
         >
           {/* Subtle gradient glow in background */}
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-[80px] pointer-events-none transition-all duration-700"

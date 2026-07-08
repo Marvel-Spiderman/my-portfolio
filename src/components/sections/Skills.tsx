@@ -228,14 +228,22 @@ export default function Skills() {
               },
               { label: "Cloud Stream", component: <CloudInfrastructure /> },
             ].map(({ label, component }) => (
-              <div key={label} className="w-full max-w-[200px] rounded-2xl p-2 border"
-                style={{ background: "var(--bg-card)", borderColor: "var(--border-primary)" }}>
+              <motion.div
+                key={label}
+                className="w-full max-w-[200px] rounded-2xl p-2 border liquid-glass-border cursor-default"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border-primary)" }}
+                whileHover={{
+                  scale: 1.03,
+                  borderColor: "var(--accent)",
+                  boxShadow: "0 6px 20px var(--shadow-glow)",
+                }}
+              >
                 <p className="text-[9px] font-semibold text-center mb-1 uppercase tracking-wider"
                   style={{ color: "var(--text-muted)" }}>
                   {label}
                 </p>
                 {component}
-              </div>
+              </motion.div>
             ))}
           </div>
 

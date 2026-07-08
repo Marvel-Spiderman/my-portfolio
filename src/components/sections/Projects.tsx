@@ -138,7 +138,7 @@ function ProjectCard({ project, index, transDuration, transDelay, handleClick, h
     >
       {/* Left Column: Visual Illustration Component */}
       <motion.div 
-        className="w-full lg:w-1/2 flex items-center justify-center p-4 rounded-2xl border backdrop-blur shadow-2xl relative overflow-hidden group/ill"
+        className="w-full lg:w-1/2 flex items-center justify-center p-4 rounded-2xl border backdrop-blur shadow-2xl relative overflow-hidden group/ill liquid-glass-border"
         style={{ background: "var(--bg-card)", borderColor: "var(--border-primary)", y: yParallax }}
       >
         <div className="absolute inset-0 pointer-events-none"

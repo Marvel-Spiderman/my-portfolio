@@ -108,17 +108,23 @@ export default function Contact() {
         {/* Status badges */}
         <div className="flex flex-wrap justify-center gap-3">
           {statusBadges.map(({ icon, label, detail }) => (
-            <div
+            <motion.div
               key={label}
-              className="flex items-center gap-3 px-4 py-2.5 rounded-full"
+              className="flex items-center gap-3 px-4 py-2.5 rounded-full liquid-glass-border cursor-default"
               style={{ background: "var(--bg-card)", border: "1px solid var(--border-primary)" }}
+              whileHover={{
+                scale: 1.04,
+                borderColor: "var(--accent)",
+                boxShadow: "0 6px 20px var(--shadow-glow)",
+              }}
+              transition={{ duration: 0.2 }}
             >
               <div className="flex items-center justify-center">{icon}</div>
               <div>
                 <p className="text-[9px] font-bold uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>{label}</p>
                 <p className="text-xs font-bold" style={{ color: "var(--text-primary)" }}>{detail}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -139,7 +145,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   onClick={() => audioSynth.playClick()}
                   onMouseEnter={() => audioSynth.playHover()}
-                  className="flex items-center gap-4 p-4 rounded-2xl cursor-pointer group"
+                  className="flex items-center gap-4 p-4 rounded-2xl cursor-pointer group liquid-glass-border"
                   style={{
                     background: "var(--bg-card)",
                     border: "1.5px solid var(--border-primary)",
@@ -186,13 +192,23 @@ export default function Contact() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
             viewport={{ once: true }}
-            className="p-6 rounded-3xl space-y-5"
+            className="p-6 rounded-3xl space-y-5 liquid-glass-border cursor-default shadow-lg"
             style={{
               background: "var(--bg-card)",
               border: "1.5px solid var(--border-primary)",
               backdropFilter: "blur(24px)",
+            }}
+            whileHover={{
+              y: -4,
+              borderColor: "var(--accent)",
+              boxShadow: "0 10px 30px var(--shadow-glow)",
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 22,
+              y: { duration: 0.25 }
             }}
           >
             <div className="space-y-1">
